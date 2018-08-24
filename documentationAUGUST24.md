@@ -40,14 +40,14 @@ LEDs can be sanded down if the PCB isn’t level
 
 
 ### To Do (Suggestions):
-Replace LED 7 Segment drivers with shift registers like the ones on the LED ring
-Button debouncing with a simple RC circuit - add this. Very easy 
-Actually study in detail how all the internal clocks/registers and interrupts on the MSP work 
-Static current leakage in normal led driver
-Add in LVC (Low voltage cutoff) circuit
-Fix charging circuitry
-Rubberized coating/surface finish. Try Plasti-Dip coating?
-Include some sort of data recording & reporting system
+- Replace LED 7 Segment drivers with shift registers like the ones on the LED ring
+- Button debouncing with a simple RC circuit - add this. Very easy 
+- Actually study in detail how all the internal clocks/registers and interrupts on the MSP work 
+- Static current leakage in normal led driver
+- Add in LVC (Low voltage cutoff) circuit
+- Fix charging circuitry
+- Rubberized coating/surface finish. Try Plasti-Dip coating?
+- Include some sort of data recording & reporting system
 
 
 
