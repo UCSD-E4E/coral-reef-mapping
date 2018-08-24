@@ -17,23 +17,23 @@ I’ll start by saying that you should feel free to reach out to either of us at
 
 Potting is quite simple. 
 
-Thread the bolt through the corner of the mold, and hot glue the surrounding area to reseal the mold. 
-Spray a coating layer of mold release onto the mold and exposed threads of the bolt
-Screw on the nut
-Set the PCB in the mold, making sure that the QI receiver is as close as possible to the bottom of the mold without touching it (I like to use 3 dots of hot glue on the bottom). 
-Mix epoxy. Be sure to stir enough! 10 minutes at a minimum. Having the epoxy not cure is the worst thing, don’t let it happen to you.
-Pour epoxy into the mold around the pcb. Be careful once the epoxy fills above the pcb- don’t pour too much. Be sure to not cover the pressure sensor.
-Stop filling when everything is covered except for the pressure sensor & displays. The pressure sensor is the most important part- if you get epoxy on the top you’re screwed. Be careful.
-Let cure for ~12 hours
+- Thread the bolt through the corner of the mold, and hot glue the surrounding area to reseal the mold. 
+- Spray a coating layer of mold release onto the mold and exposed threads of the bolt-
+- Screw on the nut
+- Set the PCB in the mold, making sure that the QI receiver is as close as possible to the bottom of the mold without touching it (I like to use 3 dots of hot glue on the bottom). 
+- Mix epoxy. Be sure to stir enough! 10 minutes at a minimum. Having the epoxy not cure is the worst thing, don’t let it happen to you.
+- Pour epoxy into the mold around the pcb. Be careful once the epoxy fills above the pcb- don’t pour too much. Be sure to not cover the pressure sensor.
+- Stop filling when everything is covered except for the pressure sensor & displays. The pressure sensor is the most important part- if you get epoxy on the top you’re screwed. Be careful.
+- Let cure for ~12 hours
 
 ### Finishing
 
 I haven’t quite perfected finishing yet, but here are some tips:
 
-Normal spray-paint looks bad
-The epoxy can be sanded or dremeled if one is really careful. 
-If you scratch the 7 segment displays, the surface blueish can be sanded away to reveal a white plastic front
-LEDs can be sanded down if the PCB isn’t level
+- Normal spray-paint looks bad
+- The epoxy can be sanded or dremeled if one is really careful. 
+- If you scratch the 7 segment displays, the surface blueish can be sanded away to reveal a white plastic front
+- LEDs can be sanded down if the PCB isn’t level
 
 
 
