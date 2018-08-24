@@ -50,4 +50,7 @@ I haven’t quite perfected finishing yet, but here are some tips:
 - Include some sort of data recording & reporting system
 
 
-
+### Electronic Hardware:
+Most of the hardware can be understood from the PCB files and the BOM. Some notes: 
+- In choosing what capacitors to put in the design, we just followed datasheets directly. Perhaps a capacitor could be added directly by the battery? 
+- The charging circuitry was gained [this website](http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/). If you decide to create a super-minimalist system, you could probably do without it by not powering any LEDs during charging (thus almost no load). However, it would be nice to power LEDs while charging to show charge status.   
