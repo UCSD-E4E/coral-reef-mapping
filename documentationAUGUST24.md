@@ -1,7 +1,7 @@
 # Coral Reef Depth/Heading Sensor, Documentation 8-24-18
 
 
-### Dan Sturm, 609-712-7596, dsturm@princeton.edu, dansturm1##7@gmail.com - try them all. 
+### Dan Sturm, 609-712-7596, dsturm@princeton.edu, dansturm17@gmail.com - try them all. 
 ### Robert Barlow, 802-595-9137, robert.barlow@stuents.olin.edu
 ### Please don’t hesitate to reach out. 
 
