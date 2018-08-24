@@ -1,9 +1,9 @@
 # Coral Reef Depth/Heading Sensor, Documentation 8-24-18
 
 
-### Dan Sturm, 609-712-7596, dsturm@princeton.edu, dansturm17@gmail.com - try them all. 
-### Robert Barlow, 802-595-9137, robert.barlow@stuents.olin.edu
-### Please don’t hesitate to reach out. 
+##### Dan Sturm, 609-712-7596, dsturm@princeton.edu, dansturm17@gmail.com - try them all. 
+##### Robert Barlow, 802-595-9137, robert.barlow@stuents.olin.edu
+##### Please don’t hesitate to reach out. 
 
 
 Hey there! Thanks for taking up the “Reef Pin” project. Rob and I put a lot of work into this summer and care a lot about it, so we appreciate the work you’re going to put into it. This google doc is our attempt to document all the work we’ve done this summer so that you can pick up easily where we left off. 
@@ -13,7 +13,7 @@ I’ll start by saying that you should feel free to reach out to either of us at
 
 
 
-Potting
+### Potting
 
 Potting is quite simple. 
 
@@ -26,7 +26,7 @@ Pour epoxy into the mold around the pcb. Be careful once the epoxy fills above t
 Stop filling when everything is covered except for the pressure sensor & displays. The pressure sensor is the most important part- if you get epoxy on the top you’re screwed. Be careful.
 Let cure for ~12 hours
 
-Finishing
+### Finishing
 
 I haven’t quite perfected finishing yet, but here are some tips:
 
@@ -39,7 +39,7 @@ LEDs can be sanded down if the PCB isn’t level
 
 
 
-To Do (Suggestions):
+### To Do (Suggestions):
 Replace LED 7 Segment drivers with shift registers like the ones on the LED ring
 Button debouncing with a simple RC circuit - add this. Very easy 
 Actually study in detail how all the internal clocks/registers and interrupts on the MSP work 
