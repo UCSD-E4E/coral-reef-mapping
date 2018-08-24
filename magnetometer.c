@@ -19,67 +19,63 @@ const uint32_t lookup[lookup_prec] = {1143,     3432,     5722,     8016,     10
 
 const uint8_t shiftAmount = 17;
 
-void magnetometer_normal() 
+void magnetometer_normal(uint8_t power)
 {
-    // Give system an ODR of 2.5 Hz. X and Y in high power mode
-    uint16_t setXY[] = {WRITE, CTRL_REG1, 0x48};
-    // Set scale to be +- 4 guass. 
-    uint16_t setSCALE[] = {WRITE, CTRL_REG2, 0x00};
-    // Put system in continuous conversion mode 
-    uint16_t setCConversion[] = {WRITE, CTRL_REG3, 0x00};
+
+    const uint16_t setXY[] = {WRITE, CTRL_REG1, (power << 5) | 0x08};
+    // Set scale to be +- 4 guass.
+    const uint16_t setSCALE[] = {WRITE, CTRL_REG2, 0x00};
+    // Put system in continuous conversion mode
+    const uint16_t setCConversion[] = {WRITE, CTRL_REG3, 0x00};
     // Put Z in low power mode
-    uint16_t setZ[] = {WRITE, CTRL_REG4, 0x00};
+    const uint16_t setZ[] = {WRITE, CTRL_REG4, 0x00};
     // Block data update - date will only be updated once it has been read
-    uint16_t setBDU[] = {WRITE, CTRL_REG5, 0x40};
+    const uint16_t setBDU[] = {WRITE, CTRL_REG5, 0x40};
 
     /*
-    uint16_t ctrl1_data = 0x48;
-    uint16_t ctrl2_data = 0x00;
-    uint16_t ctrl3_data = 0x00;
-    uint16_t ctrl4_data = 0x00;
-    uint16_t ctrl5_data = 0x40;
+    // Give system an ODR of 2.5 Hz. X and Y in high power mode
+    // const uint16_t ctrl1_data = 0x48;
+    const uint16_t ctrl1_data = (power << 5) | 0x08;
+
+    // Set scale to be +- 4 guass. 
+    const uint16_t ctrl2_data = 0x00;
+    // Put system in continuous conversion mode 
+    const uint16_t ctrl3_data = 0x00;
+    // Put Z in low power mode
+    const uint16_t ctrl4_data = 0x00;
+    // Block data update - date will only be updated once it has been read
+    const uint16_t ctrl5_data = 0x40;
 
     uint16_t setSettings[] = {WRITE, (CTRL_REG1 | 0x80), ctrl1_data, ctrl2_data, ctrl3_data, ctrl4_data, ctrl5_data};
     i2c_send_sequence(setSettings, 7, 0, LPM0_bits);
     */
 
+
     i2c_send_sequence(setXY, 3, 0, LPM0_bits);
+    i2c_send_sequence(setXY, 3, 0, LPM0_bits);
+
+    i2c_send_sequence(setXY, 3, 0, LPM0_bits);
+
     i2c_send_sequence(setSCALE, 3, 0, LPM0_bits);
     i2c_send_sequence(setCConversion, 3, 0, LPM0_bits);
     i2c_send_sequence(setZ, 3, 0, LPM0_bits);
     i2c_send_sequence(setBDU, 3, 0, LPM0_bits);
-}
-
-void magnetometer_copy()
-{
-    // OM = 00 (low-power mode for X and Y); DO = 000 (0.625 Hz ODR)
-    uint16_t setXY[] = {WRITE, CTRL_REG1, 0x70};
-    // FS = 00 (+/- 4 gauss full scale)
-    uint16_t setSCALE[] = {WRITE, CTRL_REG2, 0x00};
-    // MD = 00 (continuous-conversion mode)
-    uint16_t setCConversion[] = {WRITE, CTRL_REG3, 0x00};
-    // OMZ = 0 (low-power mode for Z)
-    uint16_t setZ[] = {WRITE, CTRL_REG4, 0x0C};
-    // set this bdu
-   // uint16_t setBDU[] = {WRITE, CTRL_REG5, 0x40};
-
     i2c_send_sequence(setXY, 3, 0, LPM0_bits);
-    i2c_send_sequence(setSCALE, 3, 0, LPM0_bits);
-    i2c_send_sequence(setCConversion, 3, 0, LPM0_bits);
-    i2c_send_sequence(setZ, 3, 0, LPM0_bits);
-    // i2c_send_sequence(setBDU, 3, 0, LPM0_bits);
+
+
 }
+
 
 void magnetometer_powerDown() 
 {
     // puts the system in power down mode --> make sure it draws almost no current here
-    uint16_t setPowerDown[] = {WRITE, CTRL_REG3, 0x02};
+    uint16_t setPowerDown[] = {WRITE, CTRL_REG3, POWER_DOWN};
     i2c_send_sequence(setPowerDown, 3, 0, LPM0_bits);
 }
 
 void magnetometer_wakeUp()
 {
-	uint16_t setWakeUp[] = {WRITE, CTRL_REG3, 0x00};
+	uint16_t setWakeUp[] = {WRITE, CTRL_REG3, NORMAL_ON};
 	i2c_send_sequence(setWakeUp, 3, 0, LPM0_bits);
 }
 
@@ -120,7 +116,11 @@ uint16_t magnetometer_readData()
     uint8_t rawData[4]; // maybe this could be signed? the arduino library uses unsigned at this stage
     uint16_t readData[] = {WRITE, OUT_X_L, I2C_RESTART, READ, I2C_READ, I2C_READ, I2C_READ, I2C_READ};
     i2c_send_sequence(readData, 8, &rawData[0], LPM0_bits);
-    uint16_t theta = process_data(rawData);
+    uint16_t theta = process_data(rawData) + 90;
+    if (theta >= 360)
+    {
+        theta -= 360;
+    }
     return theta;
 
     // put theta at the end of the array
@@ -132,11 +132,18 @@ uint16_t magnetometer_readData()
 
 uint8_t magnetometer_newData()
 {
+
     uint8_t status;
     uint16_t readData[] = {WRITE, STATUS_REG, I2C_RESTART, READ, I2C_READ};
     i2c_send_sequence(readData, 5, &status, LPM0_bits);
     return (status & 0x01) && ((status >> 1) & (0x01));
 
     // int i = atan2(2,1);
+/*
+    int i;
+    for (i = 0; i < 10000; i++){;}
+
+    return 1;
+*/
 }
 
