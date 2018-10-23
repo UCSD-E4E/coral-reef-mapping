@@ -1,0 +1,1 @@
+This section contains a bunch of relevant datasheets, as well as other information about using the MSP 430. Datasheets can also be found by going to the various Mouser pages for the parts - URLs can be found on the BOM. 
