@@ -71,6 +71,6 @@ Most of the hardware can be understood from the PCB files and the BOM. Some note
 
 
 ### About the Code
-Most of the code should make sense. It isn't perfect but what's there works for the most part. Here's some things to know:
+###### Most of the code should make sense. It isn't perfect but what's there works for the most part. Here's some things to know:
 
 
