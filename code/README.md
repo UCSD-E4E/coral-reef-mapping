@@ -6,4 +6,4 @@ The code is organized as follows:
 - I'm not a CS student so please pardon any other issues you see. Stuff might be implemented in sub-optimal ways (things more important than just the naming), so don't be afraid to change stuff if you're good at microcontroller programming. 
 
 Things to note: 
-- The function names aren't great; sorry about that. I'm a bit of a neat freak but never got around to organizing all the function and variable names to follow some nice rules. I would reccomend doing something like the following for naming functions: (device name)_purposeOfFunction 
+- The function names aren't great; sorry about that. I'm a bit of a neat freak but never got around to organizing all the function and variable names to follow some nice rules. I would reccomend doing something like the following for naming functions: (device name)\_purposeOfFunction
