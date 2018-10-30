@@ -8,6 +8,8 @@ Most of the hardware can be understood from the PCB files and the BOM. Some note
 
 ![screen shot 2018-10-29 at 8 21 41 pm](https://user-images.githubusercontent.com/38843343/47687781-603ee480-dbb8-11e8-9dee-bec41aa81f1b.png)
 
+![screen shot 2018-10-29 at 8 21 41 pm](https://user-images.githubusercontent.com/38843343/47688020-9d57a680-dbb9-11e8-8609-9b3051a04ea1.png)
+
 
 #### LEDs:
 - We deemed that the best color of LEDs to use will be orange or yellow, as these will be the most visible underwater. 
