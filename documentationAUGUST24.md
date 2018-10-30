@@ -45,13 +45,14 @@ I haven’t quite perfected finishing yet, but here are some tips:
 - Revise the hardware and make a new PCB. Once whoever takes up this project gains familiarity with the code and modifies it in whatever way is needed, this is probably the next logical step. Elements of this include the following. More details can be found in the PCB and hardware sections.  
 	1) Maybe replace LED 7 Segment drivers with shift registers like the ones on the LED ring (see hardware section). This might be helpful, might not be. Not urgent
 	2) Button debouncing with a simple RC circuit - add this (see hardware section). There's a good chance this isn't needed; also a good chance that we'll eliminate buttons if we change the overall power setup of the system. So play it by ear
-	3) Static current leakage in normal (non-multiplexed) led driver (see hardware section)
-	4) This sucks, but whether or not it really needs to be addressed depends again on how the overall power setup ends up, so play it by ear
-	5) Add in LVC (Low voltage cutoff) circuit. Not urgent, but important
-	6) Test charging circuitry. Not urgent but important
+	3) Static current leakage in normal (non-multiplexed) led driver (see hardware section). This sucks, but whether or not it really needs to be addressed depends again on how the overall power setup ends up, so play it by ear
+	4) Add in LVC (Low voltage cutoff) circuit. Not urgent, but important
+	5) Test charging circuitry. Not urgent but important
+	6) Use a lot more SMD parts
+	7) Potentially change the overall power distribution
+	8) Whatever else we learn by putting together a PCB 1.1
 - Rubberized coating/surface finish. Try Plasti-Dip coating?
 - Include some sort of data recording & reporting system
-- Make decisions about the system overview 
 
 
 ### Electronic Hardware:
