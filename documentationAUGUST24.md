@@ -39,14 +39,19 @@ I haven’t quite perfected finishing yet, but here are some tips:
 
 
 ### To Do (Suggestions):
-- Replace LED 7 Segment drivers with shift registers like the ones on the LED ring
-- Button debouncing with a simple RC circuit - add this. Very easy 
-- Actually study in detail how all the internal clocks/registers and interrupts on the MSP work 
-- Static current leakage in normal led driver
-- Add in LVC (Low voltage cutoff) circuit
-- Fix charging circuitry
+##### This will hopefully provide some direction to whoever works on this project next. Some of these suggestions are more important than others
+- Test all the code and begin to integrate it. This is most logical starting point for someone taking on this project, because 1) it will offer familiarity with where the project is at and what the current system can do, and 2) it will make clear what tasks need to be taken up in the future. 
+	- So, not urgent but the logical starting place 
+- Revise the hardware and make a new PCB. Once whoever takes up this project gains familiarity with the code and modifies it in whatever way is needed, this is probably the next logical step. Elements of this include the following. More details can be found in the PCB and hardware sections.  
+	1) Maybe replace LED 7 Segment drivers with shift registers like the ones on the LED ring (see hardware section). This might be helpful, might not be. Not urgent
+	2) Button debouncing with a simple RC circuit - add this (see hardware section). There's a good chance this isn't needed; also a good chance that we'll eliminate buttons if we change the overall power setup of the system. So play it by ear
+	3) Static current leakage in normal (non-multiplexed) led driver (see hardware section)
+	4) This sucks, but whether or not it really needs to be addressed depends again on how the overall power setup ends up, so play it by ear
+	5) Add in LVC (Low voltage cutoff) circuit. Not urgent, but important
+	6) Test charging circuitry. Not urgent but important
 - Rubberized coating/surface finish. Try Plasti-Dip coating?
 - Include some sort of data recording & reporting system
+- Make decisions about the system overview 
 
 
 ### Electronic Hardware:

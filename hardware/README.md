@@ -39,7 +39,7 @@ Most of the hardware can be understood from the PCB files and the BOM. Some note
 	- We didn't want it to be much bigger than we needed it to be (we only needed a couple GPIOs, while some of the MSPs offer tons (50, 60, etc...))
 	- We wanted a through-hole part (even though, as mentioned above, switching to SMD parts would probably be good, [here's](https://www.mouser.com/ProductDetail/Texas-Instruments/MSP430G2452IPW14R?qs=sGAEpiMZZMsp%252bcahb6g%252bW1YkEjNKHo1YPYnoEmHlfIc%3d) a micro that's pretty much the same as what we have but in TSSOP)
 	- We wanted a chip with USI communication and not USCI or something else (see my note above - command f is probably easiest haha)
-
+- Be careful for pin 16 - RST' (as in, NOT RST). It has to be tied high. We started the summer using a different MSP that was very similar to this one and then when we switched to this one it took us a while to figure out that that pin was there :(. 
 
 
 
