@@ -4,7 +4,8 @@ Most of the hardware can be understood from the PCB files and the BOM. Some note
 - In choosing what decoupling capacitors to put in the design, we just followed datasheets directly. Don't forget to put them in - Rob and I spent two days straight trying to figure out why a multilexed 7-segment LED driver couldn't light up more than 2-3 segments at a time, and the issue was that we were missing a capacitor from Vcc to GND. Perhaps a capacitor should be added directly by the battery. 
 - Be super scrutinous and thorough when looking at datasheets. Not doing this can lead to big annoying problems, especially with the cost and delay of ordering hardware. For example, Rob and I originally ordered common-anode 7-segment displays but common cathode 7-segment LED drivers. 
 
-![screen shot 2018-10-29 at 8 21 41 pm](https://user-images.githubusercontent.com/38843343/47687781-603ee480-dbb8-11e8-9dee-bec41aa81f1b.png
+![screen shot 2018-10-29 at 8 21 41 pm](https://user-images.githubusercontent.com/38843343/47687781-603ee480-dbb8-11e8-9dee-bec41aa81f1b.png)
+
 
 #### LEDs:
 - We deemed that the best color of LEDs to use will be orange or yellow, as these will be the most visible underwater. 
