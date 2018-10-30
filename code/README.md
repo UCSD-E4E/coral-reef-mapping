@@ -1,10 +1,10 @@
-### Code:
+## Code:
 The code is organized as follows:
 - All of our (programmable) devices are integrated along the I2C bus, so that is a central feature of all the code. 
 - The code isn't super pretty. Issues are discussed below. 
 - I'm not a CS student so please pardon any other issues you see. Stuff might be implemented in sub-optimal ways (things more important than just the naming), so don't be afraid to change stuff if you're good at microcontroller programming. 
 
-#### Things to note: 
+### Things to note: 
 - For each device, there's a .h file declaring functions and some constants, and then a .c function implementing all of them.
 - The function names aren't great; sorry about that. I'm a bit of a neat freak but never got around to organizing all the function and variable names to follow some nice rules. I would reccomend doing something like the following for naming functions: "device name in camelCase" + "\_" + "purpose of function in camelCase". I meant to do this but ran out of time. And of course, this is your project now and not mine so name your functions however you want.
 - Depth sensor code - I don't think this code works, sorry about that. It's pretty close though, there's just some bug I didn't have time to catch because I can't test anything now that I'm not on campus. The depth sensor is interesting; you have to do some processing on the data that the device gives. The datasheet has some description of the processing that needs to happen, and an implementation is provided in code from Sparkfun. I copied this code and modified it just a tad to get rid of floats. Should work. 
@@ -12,6 +12,6 @@ The code is organized as follows:
 - I2C - I'm currently using [this](https://github.com/jwr/msp430_usi_i2c) I2C library. That github page is great as it explains how to use the code. Most of the I2C communications should be covered in the code that I have written, but this is still good reference. I found it pretty helpful to just throw whatever I2C addresses were necessary for a given device in the corresponding .h file. 
 - When I say "normal" LED driver, that's referring to the the non-multiplexed LED drivers (currently driving the LED ring). When I say "numeric" LED driver, that's referring to the multiplexed one that that's driving the numeric displays. 
 
-#### Specific Files - sorry for the lack of comments. Instead of inserting comments now I'm going to write here whatever needs to be known about each file:
-##### Depth Sensor 
+### Specific Files - sorry for the lack of comments. Instead of inserting comments now I'm going to write here whatever needs to be known about each file:
+#### Depth Sensor 
 - The depth sensor is a little unique in how it reports data. Basically, you send it some data via I2C about what data you want from it, and then it prepares that data, and then you can read it. It's very important to wait while it is preparing the data. The datasheet has info on how long you need to wait while it is doing so ("conversion time"). I was lazy and implemented this with for loops. It would be nicer, but not 100% necessary, to do this with an actuall hardware timer. What would be super nice would be to use a timer, run other code while the timer is running, and then when that other code is done running, check to see if the time is done. If it is done you could then read the prepared data, if not, we could then just wait for the timer be done while not doing anything. 
