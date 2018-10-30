@@ -3,6 +3,8 @@ Most of the hardware can be understood from the PCB files and the BOM. Some note
 #### General:
 - In choosing what decoupling capacitors to put in the design, we just followed datasheets directly. Don't forget to put them in - Rob and I spent two days straight trying to figure out why a multilexed 7-segment LED driver couldn't light up more than 2-3 segments at a time, and the issue was that we were missing a capacitor from Vcc to GND. Perhaps a capacitor should be added directly by the battery. 
 - Be super scrutinous and thorough when looking at datasheets. Not doing this can lead to big annoying problems, especially with the cost and delay of ordering hardware. For example, Rob and I originally ordered common-anode 7-segment displays but common cathode 7-segment LED drivers. 
+- When searching on Mouser - filtering parts by certain categories can be great, but can also be dangerous since not every given product will have a value/marking for every possible sorting category. For example - let's say you're looking for LEDs and you want to just look at orange ones. Not every orange LED will be marked as orange in the "illumination color" setting, so if you filter to just see orange LEDs, you might end up missing some. Most conventional products are labeled correctly in all cases but it is a good thing to watch out for. 
+
 
 ![screen shot 2018-10-29 at 8 21 41 pm](https://user-images.githubusercontent.com/38843343/47687781-603ee480-dbb8-11e8-9dee-bec41aa81f1b.png)
 
