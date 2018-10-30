@@ -5,9 +5,6 @@ Most of the hardware can be understood from the PCB files and the BOM. Some note
 - Be super scrutinous and thorough when looking at datasheets. Not doing this can lead to big annoying problems, especially with the cost and delay of ordering hardware. For example, Rob and I originally ordered common-anode 7-segment displays but common cathode 7-segment LED drivers. 
 - When searching on Mouser - filtering parts by certain categories can be great, but can also be dangerous since not every given product will have a value/marking for every possible sorting category. For example - let's say you're looking for LEDs and you want to just look at orange ones. Not every orange LED will be marked as orange in the "illumination color" setting, so if you filter to just see orange LEDs, you might end up missing some. Most conventional products are labeled correctly in all cases but it is a good thing to watch out for. 
 
-
-![screen shot 2018-10-29 at 8 21 41 pm](https://user-images.githubusercontent.com/38843343/47687781-603ee480-dbb8-11e8-9dee-bec41aa81f1b.png)
-
 ![screen shot 2018-10-29 at 8 21 41 pm](https://user-images.githubusercontent.com/38843343/47688020-9d57a680-dbb9-11e8-8609-9b3051a04ea1.png)
 
 
